@@ -1,0 +1,26 @@
+(Prueba LEDs: X+ amarillo, X- blanco, Z+ verde, Z- azul)
+(Limites: X de -10 a 10, Z de -2 a 4)
+G90
+(Posicion inicial central: sin LED especial, solo posicionamiento)
+G0 X0 Z1
+G4 P2
+G91
+(1. X+ : amarillo)
+G1 X1 F100
+G4 P1
+(2. X- : blanco)
+G1 X-1 F100
+G4 P1
+(3. Z+ : verde)
+G1 Z1 F100
+G4 P1
+(4. Z- : azul)
+G1 Z-1 F100
+G4 P1
+(5. X+ y Z+ a la vez: amarillo + verde)
+G1 X1 Z1 F100
+G4 P1
+(6. X- y Z- a la vez: blanco + azul)
+G1 X-1 Z-1 F100
+G90
+M2

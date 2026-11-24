@@ -1,0 +1,74 @@
+(DESBASTE LONGITUDINAL - barra D50, perfil D20/cono/D35)
+(Radio: stock 25, perfil 10 -> cono -> 17.5. Sobremetal 0.5 radial, 0.2 en Z)
+N10 G21 G18 G40 G90 G94 G8
+N20 G97 S1200 M3
+N30 G0 X27 Z2
+
+(--- DESBASTE: profundidad 2 mm por pasada ---)
+
+(Pasada 1: radio 23)
+N40 G0 X23
+N41 G1 Z-54.8 F120
+N42 G1 X24 F120
+N43 G0 Z2
+
+(Pasada 2: radio 21)
+N50 G0 X21
+N51 G1 Z-54.8 F120
+N52 G1 X22 F120
+N53 G0 Z2
+
+(Pasada 3: radio 19)
+N60 G0 X19
+N61 G1 Z-54.8 F120
+N62 G1 X20 F120
+N63 G0 Z2
+
+(Pasada 4: radio 18, deja 0.5 sobre el D35)
+N70 G0 X18
+N71 G1 Z-54.8 F120
+N72 G1 X19 F120
+N73 G0 Z2
+
+(Pasada 5: radio 17, sigue el cono)
+N80 G0 X17
+N81 G1 Z-38 F120
+N82 G1 X18 F120
+N83 G0 Z2
+
+(Pasada 6: radio 15)
+N90 G0 X15
+N91 G1 Z-34 F120
+N92 G1 X16 F120
+N93 G0 Z2
+
+(Pasada 7: radio 13)
+N100 G0 X13
+N101 G1 Z-30 F120
+N102 G1 X14 F120
+N103 G0 Z2
+
+(Pasada 8: radio 11)
+N110 G0 X11
+N111 G1 Z-26 F120
+N112 G1 X12 F120
+N113 G0 Z2
+
+(Pasada 9: radio 10.5, hasta el escalon)
+N120 G0 X10.5
+N121 G1 Z-24.8 F120
+N122 G1 X12 F120
+N123 G0 Z2
+
+(--- ACABADO siguiendo el perfil ---)
+N130 G0 X10 Z2
+N131 G1 Z0 F80
+N132 G1 Z-25 F80
+N133 G1 X17.5 Z-40 F80
+N134 G1 Z-55 F80
+N135 G1 X19 F80
+
+(--- RETIRO ---)
+N140 G0 X40 Z5
+N150 M5
+N160 M30
