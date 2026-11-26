@@ -1,0 +1,3 @@
+net maq-encendida halui.machine.is-on                        => movimiento_xz_boton_habilitar.is_on
+net maq-on-pulso  movimiento_xz_boton_habilitar.power_on     => halui.machine.on
+net maq-off-pulso movimiento_xz_boton_habilitar.power_off    => halui.machine.off

@@ -1,0 +1,17 @@
+# correr con opcion -I para sesion halcmd interactiva
+
+loadusr -Wn arduino /home/debianandres/Downloads/proyecto_sistemas-master/hal_python.py
+
+show pin
+
+loadrt siggen
+
+net senal_cuadrada siggen.0.square => arduino.in_x
+
+loadrt threads name1=test_thread period1=100000000
+
+addf siggen.0.update test_thread
+
+start
+
+

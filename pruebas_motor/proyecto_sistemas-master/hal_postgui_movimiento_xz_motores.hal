@@ -1,0 +1,20 @@
+# --- habilitar (F2) ---
+net maq-encendida   halui.machine.is-on                  => movimiento_xz_motores.is_on
+net maq-on-pulso    movimiento_xz_motores.power_on       => halui.machine.on
+net maq-off-pulso   movimiento_xz_motores.power_off      => halui.machine.off
+
+# --- paro de emergencia (F1) ---
+net estop-activo    halui.estop.is-activated             => movimiento_xz_motores.estop_is_active
+net estop-act-pulso movimiento_xz_motores.estop_activate => halui.estop.activate
+net estop-rst-pulso movimiento_xz_motores.estop_reset    => halui.estop.reset
+
+# --- ejecutar archivo (R) ---
+net modo-auto-activo halui.mode.is-auto                  => movimiento_xz_motores.is_auto
+net modo-auto-pulso  movimiento_xz_motores.mode_auto     => halui.mode.auto
+net prog-run-pulso   movimiento_xz_motores.prog_run      => halui.program.run
+
+# --- finales de carrera como interruptores de home ---
+unlinkp joint.0.home-sw-in
+unlinkp joint.1.home-sw-in
+net x-home-sw movimiento_xz_motores.x_home_sw => joint.0.home-sw-in
+net z-home-sw movimiento_xz_motores.z_home_sw => joint.1.home-sw-in
