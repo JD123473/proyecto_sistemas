@@ -1,0 +1,7 @@
+net maq-encendida halui.machine.is-on                        => movimiento_xz_boton_habilitar.is_on
+net maq-on-pulso  movimiento_xz_boton_habilitar.power_on     => halui.machine.on
+net maq-off-pulso movimiento_xz_boton_habilitar.power_off    => halui.machine.off
+unlinkp joint.0.home-sw-in
+unlinkp joint.1.home-sw-in
+net x-home-sw movimiento_xz_boton_habilitar.x_home_sw => joint.0.home-sw-in
+net z-home-sw movimiento_xz_boton_habilitar.z_home_sw => joint.1.home-sw-in
